@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Navbar from './components/Navbar';
+import BookReader from './components/BookReader';
+import BookmarkList from './components/BookmarkList';
+import Footer from './components/Footer';
+import "./styles/App.css";
 
-function App() {
+const App = () => {
+  const [bookmarks, setBookmarks] = useState([]);
+
+  const addBookmark = (bookmark) => {
+    setBookmarks((prev) => [...prev, bookmark]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <BookReader onBookmark={addBookmark} />
+      <BookmarkList bookmarks={bookmarks} />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

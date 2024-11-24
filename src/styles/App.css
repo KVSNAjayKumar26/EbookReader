@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar, .footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.book-content {
+  padding: 2rem;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.bookmark-btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookmark-btn:hover {
+  background-color: #45a049;
+}
